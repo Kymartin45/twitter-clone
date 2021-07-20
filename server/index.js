@@ -15,14 +15,17 @@ app.get('/', (req, res) => {
 });
 
 // Checks to see if user & post content is typed
-function isValidPost(tweedle) {
-    return tweedle.user && tweedle.user.toString().trim() !== '' &&
-    tweedle.post && tweedle.post.toString().trim() !== ''
-}
+// Will have to do string validation for this?
 
 app.post('/tweedles', (req, res) => {
-    console.log(req.body)
-});
+    // console.log(req.body)
+        const tweedle = {
+            name: req.body.name,
+            content: req.body.content,
+            timestamp: new Date()
+        };
+        console.log(tweedle);
+    });
 
 app.listen(5000, () => {
     console.log('Listening on :5000');
