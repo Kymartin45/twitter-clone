@@ -1,0 +1,48 @@
+.homePage {
+  text-align: center;
+}
+
+/* .error {
+  background: #ff9b9b;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+} */
+
+.tweeter-form, .load {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.load {
+  text-align: center;
+}
+
+.tweedles {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tweedles > div {
+  background: hsl(0, 0%, 95%);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.tweedles > div > h3 {
+  word-wrap: break-word;
+}
+
+.tweedles > div > p {
+  word-wrap: break-word;
+}
+
+.tweedles > div:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tweeter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <body>
+        <header>
+            <h1 class="homePage">Tweeter&#128172;</h1>
+        </header>
+        <main>
+            <form class="tweeter-form">
+                <div class="error">
+                </div>
+                <label for="user">Name</label>
+                <input placeholder="Name" class="u-full-width" type="text" id="user" name="user">
+                <label for="post">TweedleLee</label>
+                <textarea class="u-full-width" placeholder="What's happening?&#128173;" type="text" id="post" name="post"></textarea>
+                <button class="button-primary">Send your Tweedle</button>
+            </form>
+            <div class="tweedle">
+
+            </div>
+            <div class="button-container">
+                <p id="loadTweedles"></p>
+            </div>
+            <div class="load">
+                <img src="./img/loadGif.gif" alt="">
+            </div>
+        </main>
+        <script src="client.js"></script>
+    </body>
+</head>
+</html>
