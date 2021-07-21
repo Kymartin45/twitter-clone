@@ -2,10 +2,11 @@ console.log('Almost Twitter');
 
 const form = document.querySelector('form');
 const loadElement = document.querySelector('.load');
+const errorElement = document.querySelector('.error');
 const API_URL = 'http://localhost:5000/tweedles';
 
 loadElement.style.display = 'none'; // Hides loading element
-
+errorElement.style.display = 'none'; // Hides error element at the page load 
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
