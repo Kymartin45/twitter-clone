@@ -1,5 +1,4 @@
-# twitter-clone
-Small Twitter clone 
+# Twitter Clone
 
 Written in *JavaScript and HTML*
 
