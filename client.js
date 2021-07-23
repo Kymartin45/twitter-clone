@@ -1,7 +1,7 @@
-console.log('Almost Twitter');
+console.log('Almost Twitter lol');
 
 const form = document.querySelector('form');
-const loadElement = document.querySelector('.load');
+const loadElement = document.querySelector('.loadPost');
 const API_URL = 'http://localhost:5000/tweedles';
 
 loadElement.style.display = 'none'; // Hides loading element
@@ -27,5 +27,7 @@ form.addEventListener('submit', (event) => {
         headers: {
             'content-type': 'application/json'
         }
-    })
+    }).then(response => response.json().then(newPost => {
+        console.log(newPost); // Log new post for now
+    }));
 })
