@@ -9,12 +9,12 @@
   padding: 10px;
 } */
 
-.tweeter-form, .load {
+.tweeter-form, .loadPost {
   width: 50%;
   margin: 0 auto;
 }
 
-.load {
+.loadPost {
   text-align: center;
 }
 
