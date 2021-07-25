@@ -22,20 +22,25 @@ function checkPost(tweedle) {
 }
 
 app.post('/tweedles', (req, res) => {
-    // console.log(req.body)
-    if (checkPost(req.body)) {
-        const tweedle = {
-            name: req.body.name + "",
-            content: req.body.content + "",
-            timestamp: new Date()
-        };
-        console.log(tweedle);
-    } else {
-        res.status(422);
+    if(!checkPost(req.body)) {
+        res.status(422)
         res.json({
-            message: 'Please type a name and post'
+            message: 'Please type name and post'
         });
     }
+    const {name, content} = req.body;
+    const timestamp = new Date().getDay;
+    const tweedle = {name, content, timestamp}; 
+
+    console.log(tweedle);
+    // if (checkPost(req.body)) {
+    //     const tweedle = {
+    //         name: req.body.name + "",
+    //         content: req.body.content + "",
+    //         timestamp: new Date()
+    //     };
+    //     console.log(tweedle);
+    // } 
 });
 
 app.listen(5000, () => {
