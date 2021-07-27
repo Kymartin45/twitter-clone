@@ -2,16 +2,20 @@
 // Cors prevents cors error
 const express = require('express');
 const cors = require('cors');
+const monk = require('monk');
+const { response } = require('express');
 
 const app = express();
+
+const db = monk('localhost:8080/tweeter'); 
+const validTweedle = db.get('tweedles');
 
 app.use(cors());
 app.use(express.json()); // Parses incoming requests
 
 app.get('/', (req, res) => {
-    res.json({
-        message: 'Yo this is a test'
-    });
+    res.send(`<h1>GET request testing</h2>
+    <p>Tweeter - The Twitter Clone</p>`)
 });
 
 function isValidTweedle(tweedle) {
@@ -30,7 +34,13 @@ app.post('/tweedles', (req, res) => {
     const timestamp = new Date();
     const tweedle = {name, content, timestamp}; 
 
-    console.log(tweedle);
+    const postObj = Object.entries(tweedle);
+    const postObjString = JSON.stringify(postObj);
+    console.log(postObjString);
+
+    validTweedle.insert(postObj).then(createdTweedle => {
+        res.json(createdTweedle);
+    });
 });
 
 app.listen(5000, () => {
